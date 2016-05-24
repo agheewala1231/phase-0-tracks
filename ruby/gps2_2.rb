@@ -12,6 +12,7 @@ def create_list
   puts "What type of list is this? "
   name = gets.chomp
   hash = {"name" => name, "items" => Array.new}
+  
   return hash
 end
 
