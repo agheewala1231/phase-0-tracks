@@ -35,3 +35,46 @@ end
 def remove_item(item, grocery_hash={})
 	grocery_hash.delete_if{|food, quantity| food == item}
 end
+
+# Method to update the quantity of an item
+# input:
+# steps:
+# output:
+
+def update_quantity(item, grocery_hash={}, quantity)
+	if grocery_hash.include?(item)
+		grocery_hash[item] = quantity
+	end
+	return grocery_hash
+end
+
+# Method to print a list and make it look pretty
+# input:
+# steps:
+# output:
+
+
+def print_list(grocery_hash={})
+	puts "Grocery List"
+	puts "************"
+	grocery_hash.each do |food, quantity| puts "#{food}: #{quantity}"
+	end
+	puts ""
+end
+
+#driver code
+
+hash = {}
+list_string = "carrots apples cereal pizza"
+create_list(list_string, hash)
+add_item("tomatoes", hash)
+add_item("lemonade" ,hash)
+add_item("onions" ,hash)
+add_item("icecream" ,hash)
+update_quantity("tomatoes", hash, 3)
+update_quantity("lemonade" ,hash, 2)
+update_quantity("onions" ,hash, 1)
+update_quantity("icecream" ,hash, 4)
+remove_item("lemonade", hash)
+update_quantity("icecream", hash, 1)
+print_list(hash)
