@@ -17,3 +17,21 @@ def create_list(list, grocery_hash={})
 	print_list(grocery_hash)
 	return grocery_hash
 end
+
+# Method to add an item to a list
+# input: item name and optional quantity
+# steps:
+# output:
+
+def add_item(item, grocery_hash={})
+	grocery_hash.merge! ({item => 1})
+end
+
+# Method to remove an item from the list
+# input:
+# steps:
+# output:
+
+def remove_item(item, grocery_hash={})
+	grocery_hash.delete_if{|food, quantity| food == item}
+end
